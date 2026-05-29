@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const { title, description = 'ESIE - International Energy Storage and Hydrogen Expo', image = '/images/og-image.jpg' } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | ESIE 2026</title>
+    <meta name="description" content={description} />
+    
+    <!-- SEO -->
+    <link rel="canonical" href={Astro.url.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- hreflang: 中文站对应链接 -->
+    <link rel="alternate" href="https://www.esexpo.org{Astro.url.pathname}" hreflang="zh-CN" />
+    <link rel="alternate" href={Astro.url.href} hreflang="en" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "ESIE 2026 - International Energy Storage and Hydrogen Expo",
+      "description": "The largest energy storage exhibition in China",
+      "startDate": "2026-04-15",
+      "endDate": "2026-04-17",
+      "location": {
+        "@type": "Place",
+        "name": "China International Exhibition Center",
+        "address": "Beijing, China"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "CNESA - China Energy Storage Alliance"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,27 @@
+---
+---
+
+<section class="py-16 lg:py-24 bg-gray-50">
+  <div class="container-wide">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Exhibitors</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Meet the industry leaders shaping the future of energy storage and hydrogen technology.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      {Array.from({ length: 12 }).map((_, i) => (
+        <div class="bg-white rounded-xl shadow-sm p-6 flex items-center justify-center h-32 hover:shadow-md transition-shadow">
+          <span class="text-gray-400 font-medium text-sm">Exhibitor {i + 1}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="/exhibitors/" class="btn-secondary">
+        View All Exhibitors →
+      </a>
+    </div>
+  </div>
+</section>

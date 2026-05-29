@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import ExhibitorShowcase from '../components/sections/ExhibitorShowcase.astro';
+import SpeakerPreview from '../components/sections/SpeakerPreview.astro';
+---
+
+<BaseLayout title="Home" description="ESIE 2026 - The 12th International Energy Storage and Hydrogen Expo & Conference, April 15-17, 2026 in Beijing, China.">
+  <Header />
+  <main>
+    <Hero />
+    <ExhibitorShowcase />
+    <SpeakerPreview />
+    
+    <!-- Agenda Section -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="container-wide">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Conference Agenda</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Three days of keynotes, panel discussions, and technical sessions covering the entire energy storage value chain.
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm p-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="text-center p-4 rounded-lg border-2 border-primary-500 bg-primary-50">
+              <div class="font-semibold text-primary-700">Day 1</div>
+              <div class="text-sm text-gray-600">April 15</div>
+            </div>
+            <div class="text-center p-4 rounded-lg border border-gray-200">
+              <div class="font-semibold text-gray-700">Day 2</div>
+              <div class="text-sm text-gray-600">April 16</div>
+            </div>
+            <div class="text-center p-4 rounded-lg border border-gray-200">
+              <div class="font-semibold text-gray-700">Day 3</div>
+              <div class="text-sm text-gray-600">April 17</div>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <a href="/agenda/" class="btn-primary">
+              View Full Agenda →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 lg:py-20 bg-primary-700 text-white">
+      <div class="container-wide text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Join ESIE 2026?</h2>
+        <p class="text-xl text-primary-100 max-w-2xl mx-auto mb-8">
+          Register now as a visitor or exhibitor and be part of the largest energy storage event in China.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/visit/" class="bg-white text-primary-700 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors inline-block">
+            Register as Visitor
+          </a>
+          <a href="/contact/" class="border-2 border-white text-white hover:bg-white hover:text-primary-700 px-8 py-3 rounded-lg font-semibold transition-colors inline-block">
+            Become an Exhibitor
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

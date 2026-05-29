@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+---
+
+<BaseLayout title="Contact" description="Get in touch with the ESIE team for exhibitor inquiries, press, or general questions.">
+  <Header />
+  <main>
+    <section class="bg-gray-50 py-12">
+      <div class="container-wide">
+        <h1 class="text-4xl font-bold mb-4">Contact Us</h1>
+        <p class="text-gray-600 max-w-2xl">
+          Have questions about ESIE 2026? Get in touch with our team.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="container-wide max-w-4xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h2 class="text-xl font-semibold mb-4">General Inquiries</h2>
+            <div class="space-y-3 text-gray-700">
+              <p><strong>Email:</strong> info@esexpo.org</p>
+              <p><strong>Phone:</strong> +86 10 8888 8888</p>
+              <p><strong>Organizer:</strong> China Energy Storage Alliance (CNESA)</p>
+            </div>
+          </div>
+          <div>
+            <h2 class="text-xl font-semibold mb-4">Exhibitor Inquiries</h2>
+            <div class="space-y-3 text-gray-700">
+              <p><strong>Email:</strong> sales@esexpo.org</p>
+              <p><strong>Phone:</strong> +86 10 8888 8889</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

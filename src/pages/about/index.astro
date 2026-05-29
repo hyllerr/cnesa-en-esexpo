@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+---
+
+<BaseLayout title="About" description="Learn about ESIE - the International Energy Storage and Hydrogen Expo, organized by CNESA.">
+  <Header />
+  <main>
+    <section class="bg-gray-50 py-12">
+      <div class="container-wide">
+        <h1 class="text-4xl font-bold mb-4">About ESIE</h1>
+        <p class="text-gray-600 max-w-2xl">
+          The International Energy Storage and Hydrogen Expo (ESIE) is the largest and most influential energy storage exhibition in China.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="container-wide max-w-4xl">
+        <div class="prose max-w-none">
+          <h2 class="text-2xl font-bold mb-4">Who We Are</h2>
+          <p class="mb-6 text-gray-700">
+            Organized by the China Energy Storage Alliance (CNESA), ESIE brings together industry leaders, policymakers, researchers, and practitioners from around the world to showcase the latest technologies, share insights, and drive the global energy transition.
+          </p>
+          
+          <h2 class="text-2xl font-bold mb-4">Our Mission</h2>
+          <p class="mb-6 text-gray-700">
+            To accelerate the development and adoption of energy storage and hydrogen technologies by providing a world-class platform for collaboration, innovation, and knowledge sharing.
+          </p>
+          
+          <h2 class="text-2xl font-bold mb-4">Key Figures</h2>
+          <ul class="list-disc pl-6 mb-6 text-gray-700">
+            <li>12 years of successful exhibitions</li>
+            <li>1,200+ exhibitors in 2026</li>
+            <li>100,000+ expected visitors</li>
+            <li>200+ industry-leading speakers</li>
+            <li>3 days of conference sessions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
