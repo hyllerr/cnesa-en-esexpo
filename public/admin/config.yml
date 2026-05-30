@@ -12,9 +12,6 @@ logo_url: https://esie.pages.dev/favicon.svg
 media_folder: public/uploads
 public_folder: /uploads
 
-locale: zh-CN
-display_url: https://esie.pages.dev
-
 collections:
   - name: "news"
     label: "新闻动态"
@@ -177,4 +174,5 @@ collections:
           - label: "SEO 关键词"
             name: "seo_keywords"
             widget: "list"
-            field: { label: "关键词", name: "keyword", widget: "string" }
+            fields:
+              - { label: "关键词", name: "keyword", widget: "string" }
