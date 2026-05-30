@@ -2,7 +2,7 @@ backend:
   name: github
   repo: hyllerr/cnesa-en-esexpo
   branch: main
-  base_url: https://sveltia-cms-auth.esie.workers.dev
+  base_url: https://sveltia-cms-auth.tangliang827.workers.dev
   auth_endpoint: auth
 
 site_url: https://esie.pages.dev
