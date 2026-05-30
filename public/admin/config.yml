@@ -5,9 +5,9 @@ backend:
   base_url: https://sveltia-cms-auth.tangliang827.workers.dev
   auth_endpoint: auth
 
-site_url: https://esie.pages.dev
-display_url: https://esie.pages.dev
-logo_url: https://esie.pages.dev/favicon.svg
+site_url: https://cnesa-en-esexpo.tangliang827.workers.dev
+display_url: https://cnesa-en-esexpo.tangliang827.workers.dev
+logo_url: https://cnesa-en-esexpo.tangliang827.workers.dev/favicon.svg
 
 media_folder: public/uploads
 public_folder: /uploads
