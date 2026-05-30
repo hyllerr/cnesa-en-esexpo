@@ -1,0 +1,14 @@
+{
+  "hero_title": "ESIE 2026\n世界储能技术大会暨展览会",
+  "hero_subtitle": "全球储能行业风向标 · 汇聚世界顶尖技术与企业",
+  "exhibition_date": "2026年10月15-17日",
+  "exhibition_venue": "北京·国家会议中心",
+  "cta_text": "立即报名",
+  "cta_link": "/register",
+  "stats": [
+    { "value": "100,000+", "label": "展览面积（㎡）" },
+    { "value": "1,000+", "label": "参展企业" },
+    { "value": "100,000+", "label": "专业观众" },
+    { "value": "50+", "label": "国家和地区" }
+  ]
+}

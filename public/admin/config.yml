@@ -1,0 +1,180 @@
+backend:
+  name: github
+  repo: hyllerr/cnesa-en-esexpo
+  branch: main
+  base_url: https://sveltia-cms-auth.esie.workers.dev
+  auth_endpoint: auth
+
+site_url: https://esie.pages.dev
+display_url: https://esie.pages.dev
+logo_url: https://esie.pages.dev/favicon.svg
+
+media_folder: public/uploads
+public_folder: /uploads
+
+locale: zh-CN
+display_url: https://esie.pages.dev
+
+collections:
+  - name: "news"
+    label: "新闻动态"
+    label_singular: "新闻"
+    description: "管理展会新闻和行业动态"
+    folder: "src/content/news"
+    create: true
+    delete: true
+    format: "frontmatter"
+    extension: "md"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "news/{{slug}}"
+    sortable_fields: ["date", "title"]
+    summary: "{{title}} | {{date}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string", required: true }
+      - { label: "发布日期", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", format: "YYYY-MM-DD", required: true }
+      - { label: "作者", name: "author", widget: "string", default: "ESIE 组委会" }
+      - { label: "封面图片", name: "image", widget: "image", required: false }
+      - { label: "摘要", name: "excerpt", widget: "text", required: false }
+      - { label: "正文内容", name: "body", widget: "markdown", required: true }
+      - label: "分类"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "展会新闻", value: "exhibition" }
+          - { label: "行业动态", value: "industry" }
+          - { label: "政策解读", value: "policy" }
+        default: "exhibition"
+      - { label: "置顶", name: "sticky", widget: "boolean", default: false }
+      - { label: "发布状态", name: "draft", widget: "boolean", default: true, hint: "开启为草稿，关闭为已发布" }
+
+  - name: "exhibitors"
+    label: "参展商"
+    label_singular: "参展商"
+    description: "管理参展企业信息"
+    folder: "src/content/exhibitors"
+    create: true
+    delete: true
+    format: "frontmatter"
+    extension: "md"
+    slug: "{{slug}}"
+    sortable_fields: ["name", "booth"]
+    summary: "{{name}} | {{booth}}"
+    fields:
+      - { label: "企业名称", name: "name", widget: "string", required: true }
+      - { label: "展位号", name: "booth", widget: "string", required: true }
+      - { label: "企业Logo", name: "logo", widget: "image", required: false }
+      - { label: "国家/地区", name: "country", widget: "string", default: "中国" }
+      - label: "展区"
+        name: "zone"
+        widget: "select"
+        options:
+          - { label: "储能展区", value: "energy-storage" }
+          - { label: "氢能展区", value: "hydrogen" }
+          - { label: "动力电池展区", value: "battery" }
+          - { label: "综合展区", value: "general" }
+        default: "energy-storage"
+      - { label: "企业简介", name: "description", widget: "text", required: false }
+      - { label: "官网地址", name: "website", widget: "string", required: false }
+      - { label: "联系邮箱", name: "email", widget: "string", required: false }
+      - { label: "重点展示", name: "featured", widget: "boolean", default: false }
+
+  - name: "sponsors"
+    label: "赞助商"
+    label_singular: "赞助商"
+    description: "管理合作伙伴和赞助商"
+    folder: "src/content/sponsors"
+    create: true
+    delete: true
+    format: "frontmatter"
+    extension: "md"
+    slug: "{{slug}}"
+    sortable_fields: ["level", "name"]
+    summary: "{{name}} | {{level}}"
+    fields:
+      - { label: "企业名称", name: "name", widget: "string", required: true }
+      - { label: "企业Logo", name: "logo", widget: "image", required: true }
+      - label: "赞助级别"
+        name: "level"
+        widget: "select"
+        options:
+          - { label: "钻石赞助", value: "diamond" }
+          - { label: "铂金赞助", value: "platinum" }
+          - { label: "黄金赞助", value: "gold" }
+          - { label: "白银赞助", value: "silver" }
+          - { label: "合作伙伴", value: "partner" }
+        default: "partner"
+      - { label: "官网地址", name: "website", widget: "string", required: false }
+      - { label: "排序权重", name: "weight", widget: "number", default: 100, value_type: "int", min: 1, max: 999 }
+
+  - name: "speakers"
+    label: "演讲嘉宾"
+    label_singular: "演讲嘉宾"
+    description: "管理论坛演讲嘉宾信息"
+    folder: "src/content/speakers"
+    create: true
+    delete: true
+    format: "frontmatter"
+    extension: "md"
+    slug: "{{slug}}"
+    sortable_fields: ["name", "date"]
+    summary: "{{name}} | {{title}}"
+    fields:
+      - { label: "姓名", name: "name", widget: "string", required: true }
+      - { label: "头像", name: "avatar", widget: "image", required: false }
+      - { label: "职位", name: "title", widget: "string", required: true }
+      - { label: "公司", name: "company", widget: "string", required: true }
+      - { label: "演讲主题", name: "topic", widget: "string", required: false }
+      - { label: "演讲日期", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", format: "YYYY-MM-DD", required: false }
+      - { label: "个人简介", name: "bio", widget: "text", required: false }
+      - { label: "是否主旨演讲", name: "keynote", widget: "boolean", default: false }
+
+  - name: "pages"
+    label: "页面内容"
+    label_singular: "页面"
+    description: "管理网站静态页面内容"
+    files:
+      - name: "homepage"
+        label: "首页配置"
+        file: "src/content/pages/homepage.json"
+        format: "json"
+        fields:
+          - { label: "Hero 标题", name: "hero_title", widget: "string", required: true }
+          - { label: "Hero 副标题", name: "hero_subtitle", widget: "text", required: false }
+          - { label: "展会日期", name: "exhibition_date", widget: "string", required: true }
+          - { label: "展会地点", name: "exhibition_venue", widget: "string", required: true }
+          - { label: "CTA 按钮文字", name: "cta_text", widget: "string", default: "立即报名" }
+          - { label: "CTA 按钮链接", name: "cta_link", widget: "string", default: "/register" }
+          - label: "关键数据"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "数值", name: "value", widget: "string" }
+              - { label: "标签", name: "label", widget: "string" }
+
+      - name: "about"
+        label: "关于我们"
+        file: "src/content/pages/about.md"
+        format: "frontmatter"
+        fields:
+          - { label: "页面标题", name: "title", widget: "string", required: true }
+          - { label: "内容正文", name: "body", widget: "markdown", required: true }
+
+  - name: "settings"
+    label: "网站设置"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "general"
+        label: "全局设置"
+        file: "src/content/settings/general.json"
+        format: "json"
+        fields:
+          - { label: "网站标题", name: "site_title", widget: "string", default: "ESIE 世界储能技术大会暨展览会" }
+          - { label: "网站描述", name: "site_description", widget: "text", required: false }
+          - { label: "联系邮箱", name: "contact_email", widget: "string", default: "info@esie.com" }
+          - { label: "联系电话", name: "contact_phone", widget: "string", required: false }
+          - label: "SEO 关键词"
+            name: "seo_keywords"
+            widget: "list"
+            field: { label: "关键词", name: "keyword", widget: "string" }
